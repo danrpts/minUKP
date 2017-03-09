@@ -78,11 +78,8 @@ while (w > 0) {
   o.push(j);
 
   // update weight
-  // proof of termination: weight is strictly positive integer
   w -= items[j][1];
 
 }
-
-console.log(k);
 
 console.log("; cost:", m[W], "weight:", s[W], "; optimal solution: ", o);

@@ -125,6 +125,4 @@ while (x >= 0 && y >= 0) {
 
 }
 
-console.log(h);
-
 console.log("cost:", m[X][Y], "; x weight:", r[X][Y][0], "; y weight:", r[X][Y][1], "; optimal solution:", o);

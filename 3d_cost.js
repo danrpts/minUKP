@@ -76,6 +76,4 @@ for (var x = 0; x <= X; x++) {
 
 }
 
-console.log(m);
-
 console.log("cost:", m[X][Y][Z]);

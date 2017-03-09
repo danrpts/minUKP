@@ -145,8 +145,6 @@ while (x >= 0 && y >= 0 && z >= 0) {
 
 }
 
-console.log(p);
-
 console.log("cost:", m[X][Y][Z],
             "; x weight:", n[X][Y][Z][0],
             "; y weight:", n[X][Y][Z][1],
