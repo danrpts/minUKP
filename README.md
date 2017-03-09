@@ -1,0 +1,2 @@
+# One-dimensional weight constraint
+Given set of n items, each item with an associated cost and weight, find the set of items such that the total weight is at least some minimum weight W and the total cost is minimized. Each item can be used 0 or finite many times.
