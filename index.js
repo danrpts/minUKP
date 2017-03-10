@@ -28,7 +28,7 @@ const ITEMS = [[2, 2, 1, 1], [3, 2, 1, 1], [2, 4, 1, 1]];
 if (USE_IMPLICIT_LOWER_DIMENSION) {
 
   // build the dp table
-  const M = require('./dp_3d.js')(ITEMS, W1, W2, W3);
+  const M = require('./lib/dp_3d.js')(ITEMS, W1, W2, W3);
 
   var cost = M[W1][W2][W3][0][0];
 
@@ -38,7 +38,7 @@ if (USE_IMPLICIT_LOWER_DIMENSION) {
 
   else {
 
-    console.log(cost, require('./backtrack_3d.js')(M, ITEMS, W1, W2, W3));
+    console.log(cost, require('./lib/backtrack_3d.js')(M, ITEMS, W1, W2, W3));
   }
 
 }
