@@ -1,0 +1,30 @@
+{
+  "name": "minukp",
+  "version": "0.0.0",
+  "description": "Minimization of multidimensional-unbounded knapsack",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/danrpts/minUKP.git"
+  },
+  "keywords": [
+    "knapsack",
+    "optimization",
+    "minimization",
+    "dynamic",
+    "programming"
+  ],
+  "author": "Daniel Peterson <danrpts@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/danrpts/minUKP/issues"
+  },
+  "homepage": "https://github.com/danrpts/minUKP#readme",
+  "dependencies": {
+    "minimist": "^1.2.0",
+    "ndarray": "^1.0.18"
+  }
+}
