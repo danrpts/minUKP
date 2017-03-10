@@ -1,5 +1,7 @@
 module.exports = (items, A, B) => {
 
+  var n = items.length;
+
   var table = require('./table_2d.js')(A, B);
 
   // pseudo-poly O(nAB)
@@ -7,7 +9,7 @@ module.exports = (items, A, B) => {
 
     for (var y = 0; y <= B; y++) {
 
-      for (var i = 0; i < items.length; i++) {
+      for (var i = 0; i < n; i++) {
 
         // item's weights
         var xi = items[i][1];

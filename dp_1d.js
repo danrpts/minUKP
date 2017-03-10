@@ -1,12 +1,14 @@
 module.exports = (items, A) => {
 
+  var n = items.length;
+
   var table = require('./table_1d.js')(A);
 
   // pseudo-poly O(nA)
   for (var x = 1; x <= A; x++) {
 
     // try to fit each item
-    for (var i = 0; i < items.length; i++) {
+    for (var i = 0; i < n; i++) {
 
       // item's weight
       var wi = items[i][1];

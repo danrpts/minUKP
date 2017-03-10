@@ -1,5 +1,7 @@
 module.exports = (items, A, B, C) => {
 
+  var n = items.length;
+
   var table = require('./table_3d.js')(A, B, C);
 
   // pseudo-poly O(nABC)
@@ -9,7 +11,7 @@ module.exports = (items, A, B, C) => {
 
       for (var z = 0; z <= C; z++) {
 
-        for (var i = 0; i < items.length; i++) {
+        for (var i = 0; i < n; i++) {
 
           // item's weights
           var xi = items[i][1];
