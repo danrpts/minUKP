@@ -10,6 +10,8 @@ var argv = parseArgs(process.argv.slice(2), {
 
     /* switches */
     o: false, // cost only
+
+    //TODO
     e: false, // explicit dimension (testing purpose)
     p: false // prevent exponential blowup (do not store all possibilities)
 
@@ -30,26 +32,21 @@ const USE_IMPLICIT_LOWER_DIMENSION = !argv.e;
 const PREVENT_BLOWUP = !argv.s;
 
 // TODO: input from file and tokenize
+/* note: costs and weights are strictly positive */
 const ITEMS = [[2, 2, 1, 1], [3, 2, 1, 1], [2, 4, 1, 1]];
 
+const M = require('./lib/dp_3nd.js')(ITEMS, W1, W2, W3);
 
-if (USE_IMPLICIT_LOWER_DIMENSION) {
+var cost = M.get(W1, W2, W3)[0];
 
-  // build the dp table
-  const M = require('./lib/dp_3d.js')(ITEMS, W1, W2, W3);
+if (RETURN_COST_ONLY) {
 
-  var cost = M[W1][W2][W3][0];
+  console.log(cost);
 
-  if (RETURN_COST_ONLY) {
+}
 
-    console.log(cost);
+else {
 
-  }
-
-  else {
-
-    console.log(cost, require('./lib/backtrack_3d.js')(M, ITEMS, W1, W2, W3));
-  
-  }
+  console.log(cost, require('./lib/bt_3nd.js')(M, ITEMS, W1, W2, W3));
 
 }
