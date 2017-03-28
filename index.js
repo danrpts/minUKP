@@ -8,36 +8,35 @@ var argv = parseArgs(process.argv.slice(2), {
     b: 0, // second weight constraint
     c: 0, // third weight constraint
 
-    /* switches */
-    o: false, // cost only
-
     //TODO
     e: false, // explicit dimension (testing purpose)
-    p: false // prevent exponential blowup (do not store all possibilities)
+    p: false, // prevent exponential blowup (do not store all possibilities)
+
+    /* switches */
+    o: false, // cost only
 
   }
 });
 
 const W1 = argv.a;
-
 const W2 = argv.b;
-
 const W3 = argv.c;
 
-const RETURN_COST_ONLY = argv.o;
-
-/* note: higher-dimension DP w/ a zeroed-dimension reduces to lower-dimension analog */
+/* note: higher-dimensional DP w/ a zeroed-dimension reduces to its lower-dimensional analog */
 const USE_IMPLICIT_LOWER_DIMENSION = !argv.e;
-
-const PREVENT_BLOWUP = !argv.s;
+const PREVENT_BLOWUP = !argv.p;
+const RETURN_COST_ONLY = argv.o;
 
 // TODO: input from file and tokenize
 /* note: costs and weights are strictly positive */
+/* convention: items are stored [cost, w1, w2, ..., wm]  */
 const ITEMS = [[2, 2, 1, 1], [3, 2, 1, 1], [2, 4, 1, 1]];
 
-const M = require('./lib/dp_3nd.js')(ITEMS, W1, W2, W3);
+const M = require('./lib/dp_nd.js')(ITEMS, W1, W2, W3);
 
 var cost = M.get(W1, W2, W3)[0];
+
+//var cost = M[W1][W2][W3][0];
 
 if (RETURN_COST_ONLY) {
 
@@ -47,6 +46,6 @@ if (RETURN_COST_ONLY) {
 
 else {
 
-  console.log(cost, require('./lib/bt_3nd.js')(M, ITEMS, W1, W2, W3));
+  console.log(cost, require('./lib/bt_nd.js')(M, ITEMS, W1, W2, W3));
 
 }
