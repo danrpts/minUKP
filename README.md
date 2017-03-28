@@ -1,7 +1,4 @@
-
-
 ## Problem
-
 Given a set of items each with a weight w_i and cost c_i, add 0 or more of each item to a knapsack such that the total weight of the knapsack is at least some minimum weight W and the total cost C is minimized.
 
 
